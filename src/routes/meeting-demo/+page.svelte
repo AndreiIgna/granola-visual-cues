@@ -215,10 +215,10 @@
 
 	// SVG graph dimensions
 	const graphWidth = 700;
-	const graphHeight = 210;
-	const graphPadX = 38;
-	const graphPadTop = 16;
-	const graphPadBottom = 30;
+	const graphHeight = 220;
+	const graphPadX = 42;
+	const graphPadTop = 22;
+	const graphPadBottom = 34;
 	const plotWidth = graphWidth - graphPadX * 2;
 	const plotHeight = graphHeight - graphPadTop - graphPadBottom;
 
@@ -2025,12 +2025,14 @@
 
 	.journey-graph-area {
 		position: relative;
+		overflow: visible;
 	}
 
 	.journey-graph {
 		width: 100%;
 		height: auto;
 		display: block;
+		overflow: visible;
 	}
 
 	.journey-graph .moment-dot {

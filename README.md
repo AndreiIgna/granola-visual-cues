@@ -1,42 +1,41 @@
-# sv
+# Granola Visual Cues
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+AI-powered meeting analysis that extracts visual cues, emotions, and key moments from video recordings. Paste a YouTube link and get a Granola-style meeting document with participant alignment scores, an emotional journey chart, timestamped summary with inline evidence badges, and an AI chat to ask follow-up questions about what happened.
 
-## Creating a project
+## What it does
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Participant analysis** — identifies speakers by name, scores their alignment with meeting goals, and detects sentiment and emotions
+- **Summary with visual evidence** — organizes discussion into topics with inline badges linking to slides, charts, and decisions shown on screen
+- **Emotional journey chart** — plots the meeting's emotional arc over time with emoji markers and clickable timestamps
+- **Key moments timeline** — color-coded bar showing where important moments and decisions occurred
+- **AI chat** — ask follow-up questions about anything in the video (slides, reactions, body language, decisions)
 
-```sh
-# create a new project
-npx sv create my-app
+## Try it
+
+Paste one of these YouTube meeting recordings to see it in action:
+
+1. [Granola Design Interview](https://www.youtube.com/watch?v=i38vvqAca8M) — a product design discussion
+2. [GitLab Product Marketing Meeting](https://www.youtube.com/watch?v=lBVtvOpU80Q) — a team sync on product marketing
+
+## Setup
+
+Requires a [Google Gemini API key](https://aistudio.google.com/apikey). Add it to `.dev.vars` for local development:
+
 ```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv create --template minimal --types ts --install npm granola-visual
+GOOGLE_GENERATIVE_AI_API_KEY=your-key-here
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
 ```sh
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
 ## Building
-
-To create a production version of your app:
 
 ```sh
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Built with SvelteKit, deployed on Cloudflare Workers. Uses Gemini 2.5 Flash for video analysis.
